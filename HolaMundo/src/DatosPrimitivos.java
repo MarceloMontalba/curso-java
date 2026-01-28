@@ -19,7 +19,7 @@ public class DatosPrimitivos {
 
         // Enteros - Primitivos
         byte entero1  = 127;
-        short entero2 =  32767;
+        short entero2 = 32767;
         int entero3   = 2147483647;
         long entero4  = 9223372036854775807L;
 
