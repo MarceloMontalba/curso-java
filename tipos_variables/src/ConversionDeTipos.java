@@ -41,5 +41,16 @@ public class ConversionDeTipos {
 
         otroRealStr = String.valueOf(3213123.34F);
         System.out.println("otroRealStr = " + otroRealStr);
+
+        int i = 32768;
+        short s = (short)i; // SE FUERZA LA CONVERSION, A PESAR DE QUE SE PUEDA PERDER INFORMACIÓN, SI ESQUE EL NUMERO CONTENIDO SUPERA EL LIMITE DEL SHORT
+                            // SI SUPERA EL TAMAÑO MAXIMO DEL SHORT NO SERÁ CAPAZ DE SOPORTAR LA CONVERSIÓN
+        System.out.println("s = " + s);
+        long l = i;
+        System.out.println("l = " + l);
+
+        // boolean b = (boolear) i;    // Convertir de int a boolean no es posible, ya que son incompatibles
+        char b = (char) i;
+        System.out.println("i = " + b); // En el caso de char traduce el decimal en su respectivo simbolo unicode
     }
 }
