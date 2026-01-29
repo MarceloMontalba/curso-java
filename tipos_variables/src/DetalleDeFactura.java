@@ -47,7 +47,17 @@ public class DetalleDeFactura {
             System.exit(0);
         }
 
-        System.out.println(precioProductoUno);
-        System.out.println(precioProductoDos);
+        double totalBruto = precioProductoUno + precioProductoDos;
+        double impuesto   = totalBruto * 0.19;
+        double totalLiquido = totalBruto + impuesto;
+
+        System.out.println("==========================================================================");
+        String textoImpresion;
+        textoImpresion  = "NOMBRE DE LA FACTURA : "+nombreFactura+"\n";
+        textoImpresion += "MONTO TOTAL BRUTO    : "+totalBruto+"\n";
+        textoImpresion += "IMPUESTO             : "+impuesto+"\n";
+        textoImpresion += "MONTO TOTAL NETO     : "+totalLiquido;
+        System.out.println(textoImpresion);
+        System.out.println("==========================================================================");
     }
 }
