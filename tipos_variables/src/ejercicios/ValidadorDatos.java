@@ -71,5 +71,7 @@ public class ValidadorDatos {
         if(edadDentroIntervalo && saldoPositivo){
             System.out.println("El usuario "+nombreIngresado+" de "+edadString+" años con saldo "+saldoIngresado+" ha ingresado datos válidos");
         }
+
+        scanner.close();
     }
 }
