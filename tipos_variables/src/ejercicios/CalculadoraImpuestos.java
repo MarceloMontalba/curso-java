@@ -28,5 +28,51 @@ public class CalculadoraImpuestos {
          * Impuesto (16%): 21.6
          * Total a pagar: 156.6
          */
+
+        double montoCompra = 0;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\nIngrese el monto de la compra : ");
+
+        try {
+            montoCompra = scanner.nextDouble();
+        } catch (InputMismatchException e) {
+            main(args);
+            System.exit(0);
+        }
+
+        // Se calcula el descuento
+        float descuentoPtj = 0;
+
+        if(montoCompra>=50 && montoCompra<=100){
+            descuentoPtj = 5;
+        }
+
+        if(montoCompra>100){
+            descuentoPtj = 10;
+        }
+        
+        double descuentoValor = montoCompra*descuentoPtj/100; 
+        double montoConDescuento = montoCompra - descuentoValor;
+
+        String mensajePantalla = "";
+         mensajePantalla += "* Monto original: "+montoCompra+'\n';
+         mensajePantalla += "* Descuento aplicado: "+descuentoValor+" ("+descuentoPtj+"%)"+'\n';
+         mensajePantalla += "* Monto después descuento: "+montoConDescuento+'\n';
+
+         // Se calcula el impuesto
+         float impuestoPtj  = 16;
+
+         double impuestoValor = montoConDescuento * impuestoPtj / 100;
+         double montoTotal    = montoConDescuento + impuestoValor;
+         
+         mensajePantalla += "* Impuesto ("+impuestoPtj+"%): "+impuestoValor+'\n';
+         mensajePantalla += "* Total a pagar: "+montoTotal;
+
+         System.out.println("======================================================================");
+         System.out.println(mensajePantalla);
+         System.out.println("======================================================================");
+
+         scanner.close();
     }
 }
