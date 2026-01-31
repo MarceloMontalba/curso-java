@@ -26,5 +26,43 @@ public class ValidadorContinente {
          * Ingrese su edad: 25
          * La edad 25 corresponde a: Adulto
          */
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\n==============================================");
+        System.out.print("Ingrese su edad: ");
+
+        int edadIngresada;
+
+        try{
+            edadIngresada = scanner.nextInt();
+        } catch(InputMismatchException e){
+            main(args);
+            return;
+        }
+
+        String clasificacionEdad = "";
+
+        if(edadIngresada<0 || edadIngresada>150){
+            clasificacionEdad = "Edad inválida";
+        }
+
+        if(edadIngresada>= 0 && edadIngresada<13){
+            clasificacionEdad = "Niño";
+        }
+
+        if(edadIngresada>=13 && edadIngresada<=17){
+            clasificacionEdad = "Adolescente";
+        }
+
+        if(edadIngresada>=18 && edadIngresada<=64){
+            clasificacionEdad = "Adulto";
+        }
+
+        if(edadIngresada>=65 && edadIngresada<=150){
+            clasificacionEdad = "Adulto Mayor";
+        }
+        
+        System.out.println("La edad "+edadIngresada+" corresponde a: "+clasificacionEdad);
     }
 }
