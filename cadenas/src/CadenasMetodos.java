@@ -14,5 +14,14 @@ public class CadenasMetodos {
         System.out.println("nombre.charAt(0) = "+ nombre.charAt(0)); // Consige el caracter de la posicion dada
         System.out.println("nombre.substring(2) = "+nombre.substring(2));
         System.out.println("nombre.substring(1,7) = "+nombre.substring(1,7)); // El limite no es inclusive (ese caracter no está considerado)
+
+        String trabalenguas = "trabalenguas";
+        System.out.println("trabalenguas.replace(\"a\",\".\") = " + trabalenguas.replace("a","."));
+        System.out.println("trabalenguas.indexOf(\"g\") = "+trabalenguas.indexOf("g")); // Devuuelve posicion de la primera cooincidencia; Si es negativo es porrque la subcadena no se encontraba en la cadena
+        System.out.println("trabalenguas.lastIndexOf(\"a\") = "+trabalenguas.lastIndexOf("a")); 
+        System.out.println("trabalenguas.contains(\"tr\") = "+trabalenguas.contains("tr")); // Devuelve true o false si la subcadena se encuntra contenido
+        System.out.println("trabalenguas.startsWith(\"ra\") = "+trabalenguas.startsWith("ra")); // True o false si la cadena comienza con la subcadena entregada
+        System.out.println("trabalenguas.endsWith(\"as\") = "+trabalenguas.endsWith("as"));
+        System.out.println("\"         cadena con espacios basuura    \".trim() = "+"         cadena con espacios basuura    ".trim());
     }
 }
